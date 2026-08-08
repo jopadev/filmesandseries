@@ -1,0 +1,255 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    padding: 40px 20px;
+}
+
+/* Cabeçalho Minimalista */
+.dark-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dark-header h1 {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.dark-header h1 span {
+    color: #66fcf1;
+    text-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+.dark-header p {
+    color: #45f3ff;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   NOVA SEÇÃO: BARRA DE FILTROS E FERRAMENTAS
+   ========================================================================== */
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: #1f2833;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Campo de Busca */
+.busca-wrapper {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-busca {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #0b0c10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-busca:focus {
+    border-color: #66fcf1;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+}
+
+/* Radio Buttons Estilizados (Estilo Interruptor/Abas) */
+.radio-group {
+    display: flex;
+    background-color: #0b0c10;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.radio-label {
+    cursor: pointer;
+}
+
+.radio-label input {
+    display: none; /* Esconde a bolinha padrão do HTML */
+}
+
+.radio-label span {
+    display: inline-block;
+    padding: 8px 20px;
+    color: #c5c6c7;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Aparência quando marcado */
+.radio-label input:checked + span {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 2px 8px rgba(102, 252, 241, 0.3);
+}
+
+/* Botão Novo */
+.btn-novo {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102, 252, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-novo:hover {
+    background-color: #45e3da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 252, 241, 0.4);
+}
+
+.btn-novo:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ELEMENTOS DO CATÁLOGO (Mantidos do tema dark anterior)
+   ========================================================================== */
+.catalogo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filme-card {
+    background-color: #1f2833;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.filme-card:hover {
+    transform: scale(1.03);
+    border-color: #66fcf1;
+    box-shadow: 0 15px 30px rgba(102, 252, 241, 0.15);
+}
+
+.capa-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: #000;
+}
+
+.capa-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+
+.filme-card:hover .capa-container img {
+    filter: brightness(1) contrast(1);
+}
+
+.hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 12, 16, 0.95), rgba(11, 12, 16, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.capa-container:hover .hover-info {
+    opacity: 1;
+}
+
+.btn-detalhes {
+    background-color: transparent;
+    color: #66fcf1;
+    border: 2px solid #66fcf1;
+    padding: 12px 26px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-detalhes:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 20px #66fcf1;
+}
+
+.filme-info {
+    padding: 20px;
+    background: linear-gradient(135deg, #1f2833, #151b23);
+}
+
+.filme-info h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filme-info .genero {
+    font-size: 0.85rem;
+    color: #66fcf1;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Responsividade para a barra de filtros */
+@media (max-width: 768px) {
+    .filtros-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .radio-group {
+        justify-content: center;
+    }
+    .btn-novo {
+        text-align: center;
+    }
+}

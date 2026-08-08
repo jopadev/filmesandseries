@@ -1,9 +1,9 @@
-import '.\Card.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./MovieCard.css";
 
- function Card({ titulo, linkImagem, genero, anoLancamento })
- {
-    return (
-        <div className="card">
+function MovieCard({ titulo, linkImagem, genero, anoLancamento }) {
+  return (
+            <div className="card">
                 <div className="card-title">
                     <h3>{titulo}</h3>
                 </div>
@@ -19,7 +19,7 @@ import '.\Card.css';
                     </span>
                 </div>
             </div>
-    );
- }
+  );
+}
 
- export default Card;
+export default MovieCard;

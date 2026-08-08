@@ -1,0 +1,362 @@
+/* Container Principal (Dark) */
+.form-container-dark {
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 0 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #f8f9fa;
+}
+
+/* Cabeçalho */
+.form-header-dark {
+  margin-bottom: 35px;
+  border-bottom: 1px solid #2d3139;
+  padding-bottom: 20px;
+}
+
+.form-header-dark h1 {
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.form-header-dark h1 span {
+  color: #3b82f6; /* Azul Elétrico moderno */
+}
+
+.form-header-dark p {
+  color: #9ca3af;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* Layout Responsivo (Grid Dinâmico) */
+.form-layout-wrapper-dark {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Formulário Principal */
+.catalogo-form-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Linha Responsiva para Data e Duração */
+.form-row-dark {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row-dark .col-dark {
+  flex: 1;
+}
+
+.form-label-dark {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* Inputs, Selects e Calendário com visual Dark */
+.form-input-dark {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  background-color: #1f2937; /* Fundo do input */
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input-dark::placeholder {
+  color: #6b7280;
+}
+
+.form-input-dark:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #111827;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Customização para o ícone do calendário dark */
+.form-input-dark[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+/* Validações em Tempo Real (Dark) */
+.form-input-dark.is-invalid-dark {
+  border-color: #f87171;
+  background-color: #2d1f21;
+}
+
+.form-input-dark.is-invalid-dark:focus {
+  box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.2);
+}
+
+.error-message-dark {
+  font-size: 12px;
+  color: #f87171;
+  font-weight: 500;
+}
+
+/* Checkbox Moderno */
+.checkbox-group-dark {
+  margin-top: 5px;
+}
+
+.checkbox-label-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #e5e7eb;
+  user-select: none;
+}
+
+.checkbox-label-dark input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  accent-color: #3b82f6; /* Força cor do checkbox para o padrão azul escuro */
+  cursor: pointer;
+}
+
+/* Botões de Ação */
+.form-actions-dark {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 15px;
+  border-top: 1px solid #2d3139;
+  padding-top: 24px;
+}
+
+.btn-cancelar-dark, .btn-salvar-dark {
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-cancelar-dark {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+.btn-cancelar-dark:hover {
+  background-color: #4b5563;
+  color: #ffffff;
+}
+
+.btn-salvar-dark {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.btn-salvar-dark:hover {
+  background-color: #2563eb;
+}
+
+.btn-cancelar-dark:disabled, .btn-salvar-dark:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Painel Lateral de Live Preview (Dark) */
+.preview-container-dark {
+  background-color: #111827;
+  border: 1px dashed #374151;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 30px;
+}
+
+.preview-title-dark {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Card do Preview Espelhado */
+.live-card-dark {
+  width: 100%;
+  background: #1f2937;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2d3139;
+}
+
+.live-capa-wrapper-dark {
+  width: 100%;
+  height: 380px;
+  background-color: #111827;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-capa-wrapper-dark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-placeholder-dark {
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.live-badge-dark {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-filme-dark { background-color: #d97706; } /* Amarelo Escuro/Âmbar */
+.badge-serie-dark { background-color: #7c3aed; } /* Roxo Intenso */
+
+.live-info-dark {
+  padding: 20px;
+}
+
+.live-info-dark h3 {
+  font-size: 19px;
+  margin-bottom: 6px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.live-genero-dark {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 14px;
+}
+
+.assistido-tag-dark {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #34d399;
+  background-color: rgba(52, 211, 153, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.loading-container-dark {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #9ca3af;
+  background: #111827;
+  height: 100vh;
+}
+
+/* ==========================================================================
+   Media Queries para Responsividade Total
+   ========================================================================== */
+
+/* Telas Médias (Tablets) */
+@media (max-width: 900px) {
+  .form-layout-wrapper-dark {
+    grid-template-columns: 1fr; /* Quebra em uma única coluna */
+    gap: 30px;
+  }
+  
+  .preview-container-dark {
+    position: static; /* Remove a fixação lateral em telas pequenas */
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* Telas Pequenas (Smartphones) */
+@media (max-width: 480px) {
+  .form-container-dark {
+    padding: 0 16px;
+    margin: 20px auto;
+  }
+
+  .form-header-dark h1 {
+    font-size: 26px;
+  }
+
+  .form-row-dark {
+    flex-direction: column; /* Coloca Data e Duração empilhados */
+    gap: 20px;
+  }
+
+  .form-actions-dark {
+    flex-direction: column-reverse; /* Empilha botões com o principal no topo */
+    gap: 12px;
+  }
+
+  .btn-cancelar-dark, .btn-salvar-dark {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .live-capa-wrapper-dark {
+    height: 300px; /* Reduz altura do preview em telas muito estreitas */
+  }
+}
+
+
+/* ==========================================================================
+   Animação Fade-In Suave ao Carregar
+   ========================================================================== */
+
+.animate-fade-in {
+  animation: fadeInSuave 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInSuave {
+  from {
+    opacity: 0;
+    transform: translateY(12px); /* Começa levemente deslocado para baixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* Termina na posição original */
+  }
+}
+
+/* Garante consistência se o carregamento do modo edição sumir */
+.loading-container-dark {
+  animation: fadeInSuave 0.3s ease-out forwards;
+}

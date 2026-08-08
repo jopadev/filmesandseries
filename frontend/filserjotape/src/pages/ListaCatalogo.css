@@ -1,0 +1,430 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    padding: 40px 20px;
+}
+
+/* Cabeçalho Minimalista */
+.dark-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dark-header h1 {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.dark-header h1 span {
+    color: #66fcf1;
+    text-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+.dark-header p {
+    color: #45f3ff;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   NOVA SEÇÃO: BARRA DE FILTROS E FERRAMENTAS
+   ========================================================================== */
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: #1f2833;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Campo de Busca */
+.busca-wrapper {
+    flex: 1;
+    min-width: 260px;
+}
+
+.input-busca {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #0b0c10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-busca:focus {
+    border-color: #66fcf1;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+}
+
+/* Radio Buttons Estilizados (Estilo Interruptor/Abas) */
+.radio-group {
+    display: flex;
+    background-color: #0b0c10;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.radio-label {
+    cursor: pointer;
+}
+
+.radio-label input {
+    display: none; /* Esconde a bolinha padrão do HTML */
+}
+
+.radio-label span {
+    display: inline-block;
+    padding: 8px 20px;
+    color: #c5c6c7;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Aparência quando marcado */
+.radio-label input:checked + span {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 2px 8px rgba(102, 252, 241, 0.3);
+}
+
+/* Botão Novo */
+.btn-novo {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102, 252, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-novo:hover {
+    background-color: #45e3da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 252, 241, 0.4);
+}
+
+.btn-novo:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ELEMENTOS DO CATÁLOGO (Mantidos do tema dark anterior)
+   ========================================================================== */
+.catalogo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalogo-container-nao-encontrado {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.catalogo-container-nao-encontrado p {
+    border:1px solid #421307;
+    color:#FF6900;
+    background-color: #260E09;
+    width: 100%;
+    padding: 4px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.filme-card {
+    background-color: #1f2833;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.filme-card:hover {
+    transform: scale(1.03);
+    border-color: #66fcf1;
+    box-shadow: 0 15px 30px rgba(102, 252, 241, 0.15);
+}
+
+.capa-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: #000;
+}
+
+.capa-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+
+.filme-card:hover .capa-container img {
+    filter: brightness(1) contrast(1);
+}
+
+/* ==========================================================================
+   NOVO: BOTÃO EXCLUIR NO TOPO DO CARD (Apenas Ícone)
+   ========================================================================== */
+.btn-excluir-topo {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 15; /* Acima da imagem e do overlay de hover */
+    background-color: rgba(11, 12, 16, 0.8); /* Fundo escuro semitransparente */
+    color: #ff4d4d; /* Cor vermelha para indicar exclusão */
+    border: 1px solid rgba(255, 77, 77, 0.4);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: 3px; /* Pequeno ajuste fino para alinhar verticalmente o símbolo '×' */
+}
+
+.btn-excluir-topo:hover {
+    background-color: #ff4d4d;
+    color: #0b0c10;
+    border-color: #ff4d4d;
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+}
+
+.btn-excluir-topo:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================================================
+   OVERLAY E DETALHES
+   ========================================================================== */
+.hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 12, 16, 0.95), rgba(11, 12, 16, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.capa-container:hover .hover-info {
+    opacity: 1;
+}
+
+.btn-detalhes {
+    background-color: transparent;
+    color: #66fcf1;
+    border: 2px solid #66fcf1;
+    padding: 12px 26px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-detalhes:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 20px #66fcf1;
+}
+
+/* Container de Informações do Filme */
+.filme-info {
+    padding: 20px;
+    background: linear-gradient(135deg, #1f2833, #151b23);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+}
+
+/* Linha Superior (Gênero + Badge) */
+.info-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filme-info .genero {
+    font-size: 0.8rem;
+    color: #66fcf1;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Estilização Geral dos Badges */
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Cores específicas para cada tipo */
+.badge-filme {
+    background-color: rgba(102, 252, 241, 0.1);
+    color: #66fcf1;
+    border: 1px solid rgba(102, 252, 241, 0.3);
+}
+
+.badge-serie {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+/* Título */
+.filme-info h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Linha do Rodapé (Ano à esquerda | Duração à direita) */
+.filme-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 12px;
+    margin-top: 4px;
+}
+
+.filme-footer .ano {
+    font-size: 0.85rem;
+    color: #c5c6c7;
+    font-weight: 500;
+}
+
+.filme-footer .duracao {
+    font-size: 0.85rem;
+    color: #c5c6c7;
+    opacity: 0.6;
+}
+
+/* Responsividade para a barra de filtros */
+@media (max-width: 768px) {
+    .filtros-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .radio-group {
+        justify-content: center;
+    }
+    .btn-novo {
+        text-align: center;
+    }
+}
+
+/* Animação Pulsante para o Skeleton */
+/* ==========================================================================
+   ANIMAÇÃO E ESTILOS DO SKELETON LOADER (IGUALADO AO CARD REAL)
+   ========================================================================== */
+
+/* Animação Pulsante Suave com Opacidade Neon */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.2; }
+}
+
+/* O container herda .filme-card para manter tamanho, bordas e fundo idênticos */
+.skeleton-item {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none; /* Desativa interações no carregamento */
+}
+
+/* Força a imagem do skeleton a ter exatamente os mesmos 350px do card real */
+.skeleton-image {
+  width: 100%;
+  height: 350px;
+  background-color: #0b0c10; /* Fundo interno escuro */
+}
+
+/* Elementos de carregamento em blocos cinza-azulados discretos */
+.skeleton-title {
+  height: 1.2rem;
+  background-color: #45f3ff;
+  opacity: 0.15;
+  border-radius: 4px;
+  width: 80%;
+  margin-top: 4px;
+}
+
+.skeleton-text {
+  background-color: #c5c6c7;
+  opacity: 0.15;
+  border-radius: 4px;
+  height: 0.85rem;
+}
+
+/* Larguras específicas para simular os textos originais e evitar quebras */
+.skeleton-text.short-badge {
+  width: 45%;
+}
+
+.skeleton-text.badge-placeholder {
+  width: 20%;
+  height: 1.2rem;
+  border-radius: 20px; /* Mantém formato arredondado do badge */
+}
+
+.skeleton-text.date-placeholder {
+  width: 25%;
+}
+
+.skeleton-text.duration-placeholder {
+  width: 30%;
+}

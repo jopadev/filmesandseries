@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import CatalogList from './pages/CatalogList';
+import ListaCatalogo from './pages/ListaCatalogo';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
-      <CatalogList/>
+      <ListaCatalogo/>
     </div>
   )
 }
