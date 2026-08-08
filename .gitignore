@@ -1,0 +1,54 @@
+# Ignorar um arquivo específico (ex: arquivo de configuração local)
+.env
+config.json
+
+# Ignorar uma pasta inteira (ex: dependências do Node.js)
+node_modules/
+bin/
+obj/
+
+# Ignorar todos os arquivos com uma extensão específica (ex: arquivos de log)
+*.log
+*.tmp
+
+# Ignorar arquivos ocultos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependências do Node (React)
+node_modules/
+.pnp
+.pnp.js
+
+# Pastas de produção/build
+dist/
+build/
+
+# Logs de erros
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Configurações do VS Code
+.vscode/
+*.code-workspace
+
+# Arquivos de compilação da API (.NET/C#)
+bin/
+obj/
+
+# Arquivos gerados pelo Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Configurações e segredos locais (não envie suas conexões de banco)
+appsettings.Development.json
+*.secrets.json
+
+# Arquivos de ambiente com senhas/chaves
+.env
+.env.local
+.env.development.local
