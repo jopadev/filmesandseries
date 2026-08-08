@@ -238,7 +238,7 @@ MoviesAndSeries/
 ## Backend
 
 ```bash
-cd backend/MoviesAndSeries.Api
+cd backend/FilmesSeriesAPI
 
 dotnet restore
 
